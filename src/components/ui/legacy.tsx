@@ -1,10 +1,12 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ChevronRight, Phone, Mail, MapPin, ExternalLink, ArrowRight } from 'lucide-react';
+import { ChevronRight, Phone, Mail, MapPin, ExternalLink, ArrowRight, Menu, X } from 'lucide-react';
 
 const LegacyPage = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const researchAreas = [
     { title: "Ageing of Solid Insulations", description: "Research and improvements in materials used for manufacturing power transformers, focusing on extending transformer life and reliability." },
     { title: "Fault Detection & Location", description: "Detection and location of faults, including impact analysis of winding deformation due to short-circuit, transportation, and ageing processes." },
@@ -55,10 +57,17 @@ const LegacyPage = () => {
 
       {/* Header / Navigation */}
       <header className="sticky top-0 z-50 bg-[#0a0f1a]">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-12">
-              <nav className="hidden md:flex items-center space-x-8">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-14 sm:h-16">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-white/60 hover:text-white transition-colors"
+            >
+              {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+
+            <div className="hidden md:flex items-center space-x-12">
+              <nav className="flex items-center space-x-8">
                 <Link href="/#services" className="text-white/60 hover:text-white transition-colors text-sm">Solutions</Link>
                 <Link href="/#services" className="text-white/60 hover:text-white transition-colors text-sm">Services</Link>
                 <Link href="/#about" className="text-white/60 hover:text-white transition-colors text-sm">About</Link>
@@ -66,17 +75,29 @@ const LegacyPage = () => {
             </div>
 
             <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-              <span className="text-white text-lg font-bold tracking-wider">TIFAC CORE</span>
+              <span className="text-white text-base sm:text-lg font-bold tracking-wider">TIFAC CORE</span>
             </Link>
 
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-4 sm:space-x-6">
               <Link href="/#get-in-touch" className="hidden md:block text-white/60 hover:text-white transition-colors text-sm">Contact</Link>
-              <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2 rounded transition-colors">
+              <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-medium px-3 sm:px-5 py-2 rounded transition-colors">
                 Back to home
               </Link>
             </div>
           </div>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#0a0f1a] border-t border-white/10">
+            <nav className="container mx-auto px-4 py-4 space-y-1">
+              <Link href="/#services" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-white/70 hover:text-white transition-colors text-sm border-b border-white/5">Solutions</Link>
+              <Link href="/#services" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-white/70 hover:text-white transition-colors text-sm border-b border-white/5">Services</Link>
+              <Link href="/#about" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-white/70 hover:text-white transition-colors text-sm border-b border-white/5">About</Link>
+              <Link href="/#team" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-white/70 hover:text-white transition-colors text-sm border-b border-white/5">Team</Link>
+              <Link href="/#get-in-touch" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-white/70 hover:text-white transition-colors text-sm">Contact</Link>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -93,40 +114,40 @@ const LegacyPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/70 to-[#0a0f1a]/40" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-6">
-          <div className="pt-24 pb-20 max-w-3xl">
-            <div className="flex items-center space-x-2 mb-6">
-              <Link href="/" className="text-white/40 hover:text-white/60 transition-colors text-sm">Home</Link>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
+          <div className="pt-16 sm:pt-24 pb-12 sm:pb-20 max-w-3xl">
+            <div className="flex items-center space-x-2 mb-4 sm:mb-6">
+              <Link href="/" className="text-white/40 hover:text-white/60 transition-colors text-xs sm:text-sm">Home</Link>
               <ChevronRight size={12} className="text-white/30" />
-              <span className="text-white/70 text-sm">Legacy</span>
+              <span className="text-white/70 text-xs sm:text-sm">Legacy</span>
             </div>
-            <h1 className="text-5xl md:text-[3.5rem] lg:text-[4rem] font-bold text-white leading-[1.1] mb-8 tracking-tight">
-              Exploring TIFAC&apos;s<br />
+            <h1 className="text-3xl sm:text-4xl md:text-[3.5rem] lg:text-[4rem] font-bold text-white leading-[1.1] mb-6 sm:mb-8 tracking-tight">
+              Exploring TIFAC&apos;s
               legacy of innovation
             </h1>
-            <p className="text-white/50 text-lg mb-10 max-w-xl leading-relaxed">
+            <p className="text-white/50 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl leading-relaxed">
               Discover the rich history and groundbreaking achievements that have shaped TIFAC Core into a leader in transformer diagnostics and power system innovation.
             </p>
           </div>
 
           {/* Stats Row */}
-          <div className="border-t border-white/10 py-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="border-t border-white/10 py-8 sm:py-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">2000</div>
-                <div className="text-white/40 text-sm">Year of inception under Mission REACH</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">2000</div>
+                <div className="text-white/40 text-xs sm:text-sm">Year of inception under Mission REACH</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">149+</div>
-                <div className="text-white/40 text-sm">M.Tech graduates in condition monitoring</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">149+</div>
+                <div className="text-white/40 text-xs sm:text-sm">M.Tech graduates in condition monitoring</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">37</div>
-                <div className="text-white/40 text-sm">CORE centres created across India</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">37</div>
+                <div className="text-white/40 text-xs sm:text-sm">CORE centres created across India</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">530L</div>
-                <div className="text-white/40 text-sm">Budget allocated for TIFAC-CORE establishment</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">530L</div>
+                <div className="text-white/40 text-xs sm:text-sm">Budget allocated for TIFAC-CORE</div>
               </div>
             </div>
           </div>
@@ -134,21 +155,21 @@ const LegacyPage = () => {
       </section>
 
       {/* Mission REACH */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Origins</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-8">Mission REACH</h2>
-            <p className="text-neutral-500 leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-6 sm:mb-8">Mission REACH</h2>
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               Mission REACH is an offshoot of &apos;Technology Vision 2020&apos; program initiated by Late Dr. A.P.J. Abdul Kalam &ndash; Former President of India through Technology Information Forecasting and Assessment Council (TIFAC), Department of Science & Technology, Govt. of India Delhi to make India a developed nation by the year 2020.
             </p>
-            <p className="text-neutral-500 leading-relaxed mb-6">
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               The program envisages to create a constellation of world class Centres Of Relevance & Excellence (COREs) in diverse disciplines across the country by the upgradation of science and technical institutions, mandated to produce technical manpower of international standard in the area of targeted excellence and tailor made to the emerging needs of industry.
             </p>
-            <p className="text-neutral-500 leading-relaxed">
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">
               As on today, about 37 Centres of Relevance and Excellence (CORE) have been created in various technical institutes throughout the country in diverse areas of science and technology. NIT Hamirpur has the privilege of having one such TIFAC-CORE in area of Power Transformer Diagnostics that is functional w.e.f 2004.
             </p>
           </div>
@@ -156,21 +177,21 @@ const LegacyPage = () => {
       </section>
 
       {/* TIFAC-CORE History - Dark section */}
-      <section className="py-24 bg-[#0a0f1a] text-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-[#0a0f1a] text-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">History</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">TIFAC-CORE in Power Transformer Diagnostics</h2>
-            <p className="text-white/40 leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">TIFAC-CORE in Power Transformer Diagnostics</h2>
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               The inception of TIFAC centre at NIT (Formerly Regional Engineering College, Hamirpur) is an outcome of relentless efforts by former Institute authorities, faculty of EED especially Prof M. N. Bandyopadhyay (Advisor), Prof. Y.R.Sood (Chief Coordinator) & Dr.R.K.Jarial (PI & Coordinator) who have worked sincerely under Visionary leadership and mentorship provided by Prof. Chandra Shakher, the former Chairman, BOG NITH & Former Director NIT Hamirpur.
             </p>
-            <p className="text-white/40 leading-relaxed mb-6">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               Since Nov. 2000, the proposal envisaged a budget of Rs. 530 Lakhs to create TIFAC-CORE in &quot;Power Transformer Diagnostics&quot; that became functional w.e.f 1st Sept/2004 after formal signing of MOU between TIFAC through Dept. of Science & Technology, Govt. of India Delhi & NIT Hamirpur on 10th Feb 2004.
             </p>
-            <p className="text-white/40 leading-relaxed">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed">
               This Centre has been working under mentorship of Apex Body having domain experts drawn from leading industries and academia. It has been seeking valuable suggestions through regular interaction with industry to make a mark in the area of on-line and off-line monitoring of electrical power apparatus especially power transformers, by creating infrastructure facilities of International Standards.
             </p>
           </div>
@@ -178,21 +199,21 @@ const LegacyPage = () => {
       </section>
 
       {/* Relevance */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Relevance</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-8">Relevance for Electrical Utilities</h2>
-            <p className="text-neutral-500 leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-6 sm:mb-8">Relevance for Electrical Utilities</h2>
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               Power Transformer is known to be one of the most important and costliest equipment that is required in an Electric Power system. It plays a pivotal role in facilitating smooth supply of Electric Power through a challenging transmission network from a Generating Power House to Electrical Distribution Points.
             </p>
-            <p className="text-neutral-500 leading-relaxed mb-6">
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               Transformer failure statistics reported in literature indicate that most failures have occurred before reaching their expected designed life of 40 years. Transformer failures are mainly related to transformer health conditions. Problems related to dielectric are reported as high as 75 percent.
             </p>
-            <p className="text-neutral-500 leading-relaxed">
+            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">
               The cost, time involved to repair and replacement of a power transformer is very high. The prolonged shutdown periods after catastrophic failures can be minimized in case electrical utilities opt for condition based maintenance program and not periodic maintenance program in respect of all major equipment&apos;s especially power transformer.
             </p>
           </div>
@@ -200,21 +221,21 @@ const LegacyPage = () => {
       </section>
 
       {/* PG & PhD - Dark */}
-      <section className="py-24 bg-[#0a0f1a] text-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-[#0a0f1a] text-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Academics</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Post Graduate & Ph.D. Programs</h2>
-            <p className="text-white/40 leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8">Post Graduate & Ph.D. Programs</h2>
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               PG program on &quot;Condition Monitoring Control and Protection of Electrical Apparatus&quot; (first of its kind in the country) was launched in June, 2009 as a collaborative endeavor between the TIFAC CORE and EED of NIT Hamirpur. Admissions in the program are normally made through Centralized Counseling Procedure for M.Tech Admission called CCMT with valid GATE score on all India basis.
             </p>
-            <p className="text-white/40 leading-relaxed mb-6">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               Research emphasis is given in industry need based identified topics for developing knowledge in thematic areas of power transformer diagnosis. Till July 2021, 149 Students of M Tech (CMEA) & 05 Ph.D. students have passed out in the emerging field of TIFAC CORE and serving in leading organizations.
             </p>
-            <p className="text-white/40 leading-relaxed">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed">
               Many alumni of M.Tech Program on Condition Monitoring are serving as Faculty in NITs, IITs, and many are pursuing Ph.D. in NITs/IITs. Some alumni are serving in Public & Private Sector Utilities as well as eminent organizations/institutes.
             </p>
           </div>
@@ -222,20 +243,20 @@ const LegacyPage = () => {
       </section>
 
       {/* Research Areas */}
-      <section className="py-24 bg-[#f7f7f7]">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-[#f7f7f7]">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Research</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-12">Major Research Areas</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-8 sm:mb-12">Major Research Areas</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
               {researchAreas.map((area, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl border border-neutral-200 hover:border-blue-300 transition-colors group">
-                  <div className="text-blue-500 text-xs font-bold mb-3">{String(index + 1).padStart(2, '0')}</div>
-                  <h3 className="text-base font-bold text-[#0a0f1a] mb-2 group-hover:text-blue-600 transition-colors">{area.title}</h3>
-                  <p className="text-neutral-500 text-sm leading-relaxed">{area.description}</p>
+                <div key={index} className="bg-white p-5 sm:p-6 rounded-xl border border-neutral-200 hover:border-blue-300 transition-colors group">
+                  <div className="text-blue-500 text-xs font-bold mb-2 sm:mb-3">{String(index + 1).padStart(2, '0')}</div>
+                  <h3 className="text-sm sm:text-base font-bold text-[#0a0f1a] mb-2 group-hover:text-blue-600 transition-colors">{area.title}</h3>
+                  <p className="text-neutral-500 text-xs sm:text-sm leading-relaxed">{area.description}</p>
                 </div>
               ))}
             </div>
@@ -244,7 +265,7 @@ const LegacyPage = () => {
       </section>
 
       {/* Future Vision - Dark CTA style */}
-      <section className="relative py-24 bg-[#0a0f1a] overflow-hidden">
+      <section className="relative py-16 sm:py-24 bg-[#0a0f1a] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1554050546-c125a25df013?w=1400&q=80"
@@ -252,20 +273,20 @@ const LegacyPage = () => {
             className="w-full h-full object-cover opacity-10"
           />
         </div>
-        <div className="relative z-10 container mx-auto px-6">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Vision</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Future Vision & Innovation</h2>
-            <p className="text-white/40 leading-relaxed mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">Future Vision & Innovation</h2>
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               As we look toward the future, TIFAC Core remains committed to pushing the boundaries of transformer diagnostics and power system innovation. We&apos;re investing heavily in emerging technologies such as advanced materials science and next-generation sensor technologies.
             </p>
-            <p className="text-white/40 leading-relaxed mb-6">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6">
               Our vision extends beyond traditional transformer diagnostics to encompass the entire smart grid ecosystem. We&apos;re developing solutions for renewable energy integration, energy storage systems, and grid modernization that will shape the future of power systems.
             </p>
-            <p className="text-white/40 leading-relaxed">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed">
               Sustainability and environmental responsibility are at the core of our future initiatives. We&apos;re working on technologies that will help reduce the environmental impact of power systems while improving efficiency and reliability for generations to come.
             </p>
           </div>
@@ -273,21 +294,21 @@ const LegacyPage = () => {
       </section>
 
       {/* Future Plans */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Roadmap</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-10">Future Plans</h2>
-            <div className="space-y-5">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-8 sm:mb-10">Future Plans</h2>
+            <div className="space-y-4 sm:space-y-5">
               {futurePlans.map((plan, index) => (
-                <div key={index} className="flex items-start space-x-4 group">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0a0f1a] flex items-center justify-center mt-0.5">
-                    <span className="text-blue-400 text-xs font-bold">{String(index + 1).padStart(2, '0')}</span>
+                <div key={index} className="flex items-start space-x-3 sm:space-x-4 group">
+                  <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#0a0f1a] flex items-center justify-center mt-0.5">
+                    <span className="text-blue-400 text-[10px] sm:text-xs font-bold">{String(index + 1).padStart(2, '0')}</span>
                   </div>
-                  <p className="text-neutral-500 leading-relaxed pt-1">{plan}</p>
+                  <p className="text-neutral-500 text-sm sm:text-base leading-relaxed pt-0.5 sm:pt-1">{plan}</p>
                 </div>
               ))}
             </div>
@@ -296,20 +317,20 @@ const LegacyPage = () => {
       </section>
 
       {/* Major Facilities */}
-      <section className="py-24 bg-[#f7f7f7]">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-[#f7f7f7]">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Infrastructure</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-4">Major Facilities</h2>
-            <p className="text-neutral-500 mb-12 max-w-2xl">Equipment and instruments available at TIFAC Centre, NIT Hamirpur for advanced transformer diagnostics.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-3 sm:mb-4">Major Facilities</h2>
+            <p className="text-neutral-500 text-sm sm:text-base mb-8 sm:mb-12 max-w-2xl">Equipment and instruments available at TIFAC Centre, NIT Hamirpur for advanced transformer diagnostics.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {facilities.map((facility, index) => (
-                <div key={index} className="bg-white p-5 rounded-lg border border-neutral-200 hover:border-blue-300 transition-all hover:shadow-sm group">
-                  <h3 className="text-sm font-bold text-[#0a0f1a] mb-2 group-hover:text-blue-600 transition-colors">{facility.title}</h3>
-                  <p className="text-neutral-400 text-xs leading-relaxed">{facility.description}</p>
+                <div key={index} className="bg-white p-4 sm:p-5 rounded-lg border border-neutral-200 hover:border-blue-300 transition-all hover:shadow-sm group">
+                  <h3 className="text-xs sm:text-sm font-bold text-[#0a0f1a] mb-1.5 sm:mb-2 group-hover:text-blue-600 transition-colors">{facility.title}</h3>
+                  <p className="text-neutral-400 text-[11px] sm:text-xs leading-relaxed">{facility.description}</p>
                 </div>
               ))}
             </div>
@@ -318,25 +339,26 @@ const LegacyPage = () => {
       </section>
 
       {/* Excellence CTA */}
-      <section className="py-24 bg-[#0a0f1a] text-white">
-        <div className="container mx-auto px-6">
+      <section className="py-16 sm:py-24 bg-[#0a0f1a] text-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-6">
               <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
               <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Excellence</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Our commitment to<br />excellence continues
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-5 sm:mb-6">
+              Our commitment to
+              excellence continues
             </h2>
-            <p className="text-white/40 leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-white/40 text-sm sm:text-base leading-relaxed mb-8 sm:mb-10 max-w-xl mx-auto">
               TIFAC Core&apos;s legacy is built on an unwavering commitment to excellence. From rigorous research methodologies to the highest standards of professionalism, we continue to push boundaries.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-              <Link href="/#team" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors flex items-center space-x-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <Link href="/#team" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors flex items-center justify-center space-x-2">
                 <span>Meet our team</span>
                 <ArrowRight size={16} />
               </Link>
-              <Link href="/#contact" className="border border-white/25 hover:border-white/50 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors">
+              <Link href="/#get-in-touch" className="border border-white/25 hover:border-white/50 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors text-center">
                 Get in touch
               </Link>
             </div>
@@ -346,9 +368,9 @@ const LegacyPage = () => {
 
       {/* Footer */}
       <footer className="bg-[#060a12] text-white">
-        <div className="container mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div>
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+            <div className="col-span-2 md:col-span-1">
               <h3 className="text-xl font-bold mb-1 tracking-wider">TIFAC CORE</h3>
               <p className="text-blue-400 text-[10px] uppercase tracking-[0.25em] mb-5">Transformer Diagnostics</p>
               <p className="text-white/30 text-sm leading-relaxed">
@@ -357,8 +379,8 @@ const LegacyPage = () => {
             </div>
 
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-5">Quick Links</h4>
-              <ul className="space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-4 sm:mb-5">Quick Links</h4>
+              <ul className="space-y-2.5 sm:space-y-3">
                 <li><Link href="/#about" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>About Us</span></Link></li>
                 <li><Link href="/#team" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Our Team</span></Link></li>
                 <li><Link href="/#services" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Services</span></Link></li>
@@ -368,9 +390,9 @@ const LegacyPage = () => {
               </ul>
             </div>
 
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-5">Explore Legacy</h4>
-              <ul className="space-y-3">
+            <div className="hidden md:block">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-4 sm:mb-5">Explore Legacy</h4>
+              <ul className="space-y-2.5 sm:space-y-3">
                 <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Mission REACH</span></a></li>
                 <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Research Areas</span></a></li>
                 <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>PG & PhD Programs</span></a></li>
@@ -380,19 +402,19 @@ const LegacyPage = () => {
             </div>
 
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-5">Contact Us</h4>
-              <ul className="space-y-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-4 sm:mb-5">Contact Us</h4>
+              <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin size={14} className="text-blue-400 mt-0.5 shrink-0" />
-                  <span className="text-white/30 text-sm">TIFAC Core, EE Department, NIT Hamirpur, Himachal Pradesh 177005</span>
+                  <span className="text-white/30 text-xs sm:text-sm">TIFAC Core, EE Dept., NIT Hamirpur, H.P. 177005</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone size={13} className="text-blue-400 shrink-0" />
-                  <span className="text-white/30 text-sm">+91 7400321092</span>
+                  <span className="text-white/30 text-xs sm:text-sm">+91 7400321092</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail size={13} className="text-blue-400 shrink-0" />
-                  <span className="text-white/30 text-sm">tifac@nith.ac.in</span>
+                  <span className="text-white/30 text-xs sm:text-sm">tifac@nith.ac.in</span>
                 </li>
               </ul>
             </div>
@@ -400,12 +422,12 @@ const LegacyPage = () => {
         </div>
 
         <div className="border-t border-white/5">
-          <div className="container mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-white/20 text-xs">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
-            <div className="flex items-center space-x-6 mt-3 md:mt-0">
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-xs">Privacy Policy</a>
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-xs">Terms of Use</a>
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-xs">Sitemap</a>
+          <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between">
+            <p className="text-white/20 text-[10px] sm:text-xs text-center sm:text-left">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
+            <div className="flex items-center space-x-4 sm:space-x-6 mt-2 sm:mt-0">
+              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Privacy Policy</a>
+              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Terms of Use</a>
+              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Sitemap</a>
             </div>
           </div>
         </div>
