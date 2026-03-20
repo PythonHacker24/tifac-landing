@@ -2,45 +2,85 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ChevronRight, Phone } from 'lucide-react';
+import { ChevronRight, Phone, Mail, MapPin, ExternalLink, ArrowRight } from 'lucide-react';
 
 const LegacyPage = () => {
+  const researchAreas = [
+    { title: "Ageing of Solid Insulations", description: "Research and improvements in materials used for manufacturing power transformers, focusing on extending transformer life and reliability." },
+    { title: "Fault Detection & Location", description: "Detection and location of faults, including impact analysis of winding deformation due to short-circuit, transportation, and ageing processes." },
+    { title: "Partial Discharge Measurement", description: "Advanced applications of partial discharge measurement in fault diagnosis and predictive maintenance of power transformers." },
+    { title: "Transformer Condition Monitoring", description: "Development and implementation of best practices for transformer condition monitoring at operational sites." },
+    { title: "Steel Industry Applications", description: "Performance evaluation of transformers feeding steel industry, addressing unique operational challenges and requirements." },
+    { title: "Insulation Oil-Paper Chemistry", description: "Comprehensive study of insulation oil and paper chemistry to understand degradation mechanisms and improve material performance." },
+    { title: "Wireless Technologies", description: "Application of wireless-based technologies for prevention of catastrophic failures in power transformer systems." },
+    { title: "Failure Analysis", description: "Comprehensive failure analysis of power transformers to understand root causes and develop prevention strategies." },
+    { title: "RLA Studies", description: "Remaining Life Assessment (RLA) studies on power transformers to optimize maintenance schedules and asset management." },
+  ];
+
+  const facilities = [
+    { title: "M 4100 Insulation Analyzer", description: "Measures capacitance, Power factor and Watt losses in the solid/liquid insulation of power transformer. Also measures leakage reactance turns ratio, excitation current etc." },
+    { title: "M 5200 Sweep Frequency Response Analyzer", description: "Utilized to detect the mechanical failure or movement of windings and core during short circuits, transportation, Re-location of Transformers." },
+    { title: "Dirana", description: "To analyze the moisture of whole power transformer insulation, Dielectric properties of insulation within a wide frequency band." },
+    { title: "High Performance Liquid Chromatography", description: "To Measure the furans in the insulating oil." },
+    { title: "Thermal Imaging Camera", description: "To capture the thermal images of power transformer while in operation." },
+    { title: "Flash Point Analyzer", description: "To measure the flash point of insulating oil." },
+    { title: "Vib Scanner", description: "To measure the vibration of power transformer." },
+    { title: "FTIR Spectrophotometer", description: "To measure the oxidation inhibitors in the insulating oil." },
+    { title: "ADTR-2K Tan Delta Test Set", description: "Measures the capacitance dielectric constant tan delta and resistivity of insulation oil." },
+    { title: "Karl Fischer Titrator", description: "To measure the water contents in the insulating oil." },
+    { title: "Breakdown Voltage Oil Test Set", description: "Measures the BDV of insulating oil." },
+    { title: "Interfacial Tension Analyzer", description: "Measure the Interfacial Tension of insulation oil." },
+    { title: "Sludge & Sediments Analyzer", description: "To measure the sludge and sediments in insulating oil." },
+    { title: "Domino Moisture in Oil Analyzer", description: "Measures the water/moisture contents in the insulating oil." },
+    { title: "Portable Dissolved Gas Analyzer", description: "Measures the dissolved gases in the insulating oil." },
+    { title: "Acidity Titrator", description: "To measure the acid contents in the insulating oil." },
+    { title: "Combined TGA, DTA, DSC", description: "Measures the chemical analysis, oxidation induction and identification of paper insulation degradation." },
+    { title: "UV/VIS Spectrophotometer", description: "Measures the dissolved decay contents of insulating liquids." },
+    { title: "Solid Breakdown Voltage Test Set", description: "Measures the BDV of insulating paper." },
+  ];
+
+  const futurePlans = [
+    "To go in NABL accreditation in respect of TIFAC-CORE linked laboratories.",
+    "To liaison world class Centres/Laboratories/Institutes for promoting R & D in emerging areas of condition assessment of power apparatus.",
+    "To interact with other state utilities/Nigams for partnering with TIFAC-CORE.",
+    "To explore opportunities for getting industry sponsored projects.",
+    "To provide ample employment opportunities to students of PG program in leading industries.",
+    "To offer more training programs on modules relevant to industry/electrical utilities for safer upkeep of electrical substation equipment.",
+    "To develop learning material in area of R & D.",
+    "To promote collaborations with leading High Voltage test labs/Institutes on mutual benefit basis.",
+  ];
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="absolute font-oxanium top-0 left-0 right-0 z-50 bg-transparent">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col">
-              <Link href="/" className="text-white text-3xl hover:text-blue-300 transition-colors">
-                TIFAC CORE
-              </Link>
-              <span className="text-white text-sm opacity-80">Transformer Diagnostics</span>
-            </div>
-            
-            <nav className="hidden md:flex items-center space-x-8 text-white">
-              <Link href="/" className="hover:text-blue-300 transition-colors">Team</Link>
-              <a href="#" className="hover:text-blue-300 transition-colors">Services</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">About Us</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">Legacy</a>
-              <a href="#" className="hover:text-blue-300 transition-colors">News</a>
-            </nav>
 
-            <div className="flex items-center space-x-4 text-white">
-              <div className="flex items-center space-x-2">
-                <Phone size={16} />
-                <span className="text-sm">+91 7400321092</span>
-              </div>
-              <button className="bg-transparent border px-4 py-2 font-bold rounded text-sm hover:border-2 transition-colors">
-                CONTACT US
-              </button>
+      {/* Header / Navigation */}
+      <header className="sticky top-0 z-50 bg-[#0a0f1a]">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-12">
+              <nav className="hidden md:flex items-center space-x-8">
+                <Link href="/#services" className="text-white/60 hover:text-white transition-colors text-sm">Solutions</Link>
+                <Link href="/#services" className="text-white/60 hover:text-white transition-colors text-sm">Services</Link>
+                <Link href="/#about" className="text-white/60 hover:text-white transition-colors text-sm">About</Link>
+              </nav>
+            </div>
+
+            <Link href="/" className="absolute left-1/2 -translate-x-1/2">
+              <span className="text-white text-lg font-bold tracking-wider">TIFAC CORE</span>
+            </Link>
+
+            <div className="flex items-center space-x-6">
+              <Link href="/#get-in-touch" className="hidden md:block text-white/60 hover:text-white transition-colors text-sm">Contact</Link>
+              <Link href="/" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2 rounded transition-colors">
+                Back to home
+              </Link>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Video Section */}
-      <section className="relative h-screen bg-black">
+      {/* Hero Section */}
+      <section className="relative bg-[#0a0f1a] overflow-hidden">
         <div className="absolute inset-0">
           <video
             src="/legacy.mp4"
@@ -48,369 +88,325 @@ const LegacyPage = () => {
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-25"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/70 to-[#0a0f1a]/40" />
         </div>
-        
-        <div className="relative z-10 container mx-auto px-6 h-full flex items-center">
-          <div className="max-w-4xl text-white font-oxanium">
-            <h1 className="text-6xl font-bold mb-6 leading-tight">
-              Exploring<br />
-              <span className="text">TIFAC&apos;s Legacy</span><br />
-              of Innovation
+
+        <div className="relative z-10 container mx-auto px-6">
+          <div className="pt-24 pb-20 max-w-3xl">
+            <div className="flex items-center space-x-2 mb-6">
+              <Link href="/" className="text-white/40 hover:text-white/60 transition-colors text-sm">Home</Link>
+              <ChevronRight size={12} className="text-white/30" />
+              <span className="text-white/70 text-sm">Legacy</span>
+            </div>
+            <h1 className="text-5xl md:text-[3.5rem] lg:text-[4rem] font-bold text-white leading-[1.1] mb-8 tracking-tight">
+              Exploring TIFAC&apos;s<br />
+              legacy of innovation
             </h1>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl">
+            <p className="text-white/50 text-lg mb-10 max-w-xl leading-relaxed">
               Discover the rich history and groundbreaking achievements that have shaped TIFAC Core into a leader in transformer diagnostics and power system innovation.
             </p>
-            <button className="bg-transparent px-8 py-3 rounded-lg border border-white text-white font-semibold hover:border-2 transition-colors flex items-center space-x-2">
-              <span>Learn More</span>
-              <ChevronRight size={20} />
-            </button>
+          </div>
+
+          {/* Stats Row */}
+          <div className="border-t border-white/10 py-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">2000</div>
+                <div className="text-white/40 text-sm">Year of inception under Mission REACH</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">149+</div>
+                <div className="text-white/40 text-sm">M.Tech graduates in condition monitoring</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">37</div>
+                <div className="text-white/40 text-sm">CORE centres created across India</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-1">530L</div>
+                <div className="text-white/40 text-sm">Budget allocated for TIFAC-CORE establishment</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Legacy Content Sections */}
-      <div className="bg-white">
-        {/* Section 1 */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-                Mission REACH
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                              Mission REACH is an offshoot of &apos;Technology Vision 2020&apos; program initiated by Late Dr. A.P.J. Abdul Kalam – Former President of India through Technology Information Forecasting and Assessment Council (TIFAC), Department of Science & Technology, Govt. of India Delhi to make India a developed nation by the year 2020. The program envisages to create a constellation of world class Centres Of Relevance & Excellence (COREs) in diverse disciplines across the country by the upgradation of science and technical institutions, mandated to produce technical manpower of international standard in the area of targeted excellence and tailor made to the emerging needs of industry. It is the befitting combination of the three most powerful pillars of economic growth i.e. industry, academic institutions and the government that provides the said mission, much needed strength and success. As on today, about 37 Centres of Relevance and Excellence (CORE) have been created in various technical institutes throughout the country in diverse areas of science and technology. NIT Hamirpur has the privilege of having one such TIFAC- CORE in area of Power Transformer Diagnostics that is functional w.e.f 2004.
-              </p>
+      {/* Mission REACH */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Origins</span>
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-8">Mission REACH</h2>
+            <p className="text-neutral-500 leading-relaxed mb-6">
+              Mission REACH is an offshoot of &apos;Technology Vision 2020&apos; program initiated by Late Dr. A.P.J. Abdul Kalam &ndash; Former President of India through Technology Information Forecasting and Assessment Council (TIFAC), Department of Science & Technology, Govt. of India Delhi to make India a developed nation by the year 2020.
+            </p>
+            <p className="text-neutral-500 leading-relaxed mb-6">
+              The program envisages to create a constellation of world class Centres Of Relevance & Excellence (COREs) in diverse disciplines across the country by the upgradation of science and technical institutions, mandated to produce technical manpower of international standard in the area of targeted excellence and tailor made to the emerging needs of industry.
+            </p>
+            <p className="text-neutral-500 leading-relaxed">
+              As on today, about 37 Centres of Relevance and Excellence (CORE) have been created in various technical institutes throughout the country in diverse areas of science and technology. NIT Hamirpur has the privilege of having one such TIFAC-CORE in area of Power Transformer Diagnostics that is functional w.e.f 2004.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Section 2 */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-              TIFAC-CORE in Power Transformer Diagnostics
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              The inception of TIFAC centre at NIT (Formerly Regional Engineering College, Hamirpur) is an outcome of relentless efforts by former Institute authorities, faculty of EED especially Prof M. N. Bandyopadhyay (Advisor), Prof. Y.R.Sood (Chief Coordinator) & Dr.R.K.Jarial (PI & Coordinator) who have worked sincerely under Visionary leadership and mentorship provided by Prof. Chandra Shakher, the former Chairman, BOG NITH & Former Director NIT Hamirpur, Dr R L Chauhan, former Chairman BOG, NIT Society and Principal, REC Hamirpur and other authorities of institute from time to time. For achieving coveted goal of self sustenance, the timely key support provided by Prof. Lalit K Awasthi, Former Director, NIT Hamirpur and Prof. H. M. Suryawanshi – the present Director, NITH would go a long way in rejuvenating further growth of TIFAC Centre in near future.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Since Nov. 2000, the proposal envisaged a budget of Rs. 530 Lakhs to create TIFAC-CORE in “Power Transformer Diagnostics” that became functional w.e.f 1st Sept/2004 after formal signing of MOU between TIFAC through Dept. of Science & Technology, Govt. of India Delhi & NIT Hamirpur on 10th Feb 2004 by Prof. Chandra shakker- the then Director, NITH. Since then, this Centre has been making every stride to enable its presence felt among leading Electric Power Utilities, ITIs and similar reputed organizations in the country & abroad.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-              This Centre has been working under mentorship of Apex Body having domain experts drawn from leading industries and academia. It has been seeking valuable suggestions through regular interaction with industry to make a mark in the area of on-line and off-line monitoring of electrical power apparatus especially power transformers, by creating infrastructure facilities of International Standards at TIFAC-CORE, NIT Hamirpur. To meet major objectives set under Mission REACH Program of Govt. of India, consistent & continuous efforts are being made through kind support from its industrial partners including Himachal Pradesh State Electricity Board Limited, Shimla. An MOU to this effect was also signed between HPSEBL, Shimla and NIT Hamirpur in January 2006 by Prof. I K Bhat- former Director, NITH. To achieve set objectives, all possible efforts have been made by all faculty, EED and past Heads, EED, Prof. Y R Sood, Prof. Sushil Chouhan, Prof. R.N. Sharma, Dr. R. Nath Sharma and as Co-ordinator, TIFAC CORE respectively. Every one has made nice effort to develop the TIFAC centre at NITH to present level of relevance and excellence.
-              </p>
+      {/* TIFAC-CORE History - Dark section */}
+      <section className="py-24 bg-[#0a0f1a] text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">History</span>
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">TIFAC-CORE in Power Transformer Diagnostics</h2>
+            <p className="text-white/40 leading-relaxed mb-6">
+              The inception of TIFAC centre at NIT (Formerly Regional Engineering College, Hamirpur) is an outcome of relentless efforts by former Institute authorities, faculty of EED especially Prof M. N. Bandyopadhyay (Advisor), Prof. Y.R.Sood (Chief Coordinator) & Dr.R.K.Jarial (PI & Coordinator) who have worked sincerely under Visionary leadership and mentorship provided by Prof. Chandra Shakher, the former Chairman, BOG NITH & Former Director NIT Hamirpur.
+            </p>
+            <p className="text-white/40 leading-relaxed mb-6">
+              Since Nov. 2000, the proposal envisaged a budget of Rs. 530 Lakhs to create TIFAC-CORE in &quot;Power Transformer Diagnostics&quot; that became functional w.e.f 1st Sept/2004 after formal signing of MOU between TIFAC through Dept. of Science & Technology, Govt. of India Delhi & NIT Hamirpur on 10th Feb 2004.
+            </p>
+            <p className="text-white/40 leading-relaxed">
+              This Centre has been working under mentorship of Apex Body having domain experts drawn from leading industries and academia. It has been seeking valuable suggestions through regular interaction with industry to make a mark in the area of on-line and off-line monitoring of electrical power apparatus especially power transformers, by creating infrastructure facilities of International Standards.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Section 3 */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-              Relevance OF TIFAC-CORE for Electrical Utilities
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Power Transformer is known to be one of the most important and costliest equipment that is required in an Electric Power system. It plays a pivotal role in facilitating smooth supply of Electric Power through a challenging transmission network from a Generating Power House to Electrical Distribution Points. Their continuous loading operation & in service conditions may sometime cause outages and catastrophic failures.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Transformer failure statistics reported in literature indicate that most failures have occurred before reaching their expected designed life of 40 years. Transformer failures are mainly related to transformer health conditions. Problems related to dielectric are reported as high as 75 percent. As per 2001 survey report submitted by a CIGRE (PARIS) working group on Failures Trends in large power transformers, about 41 % of failures were due to on-load tap changers (O.L.T.C) & about 19 % were attributed to the windings. The failure origins were 53% mechanical and 31% dielectric.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-              Some power transformers without having on-load tap changers have 26.6 % of failures that were due to the windings, 6.4 % were due to the magnetic circuit, 33.3 % were due to terminals, 17.4 % were due to the tank and dielectric fluid, 11 % were due to other accessories and 4.6 % were due to misc reasons. The cost, time involved to repair and replacement of a power transformer is very high. The prolonged shutdown periods after catastrophic failures can be minimized in case electrical utilities opt for condition based maintenance program and not periodic maintenance program in respect of all major equipment’s especially power transformer.
-              </p>
+      {/* Relevance */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Relevance</span>
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-8">Relevance for Electrical Utilities</h2>
+            <p className="text-neutral-500 leading-relaxed mb-6">
+              Power Transformer is known to be one of the most important and costliest equipment that is required in an Electric Power system. It plays a pivotal role in facilitating smooth supply of Electric Power through a challenging transmission network from a Generating Power House to Electrical Distribution Points.
+            </p>
+            <p className="text-neutral-500 leading-relaxed mb-6">
+              Transformer failure statistics reported in literature indicate that most failures have occurred before reaching their expected designed life of 40 years. Transformer failures are mainly related to transformer health conditions. Problems related to dielectric are reported as high as 75 percent.
+            </p>
+            <p className="text-neutral-500 leading-relaxed">
+              The cost, time involved to repair and replacement of a power transformer is very high. The prolonged shutdown periods after catastrophic failures can be minimized in case electrical utilities opt for condition based maintenance program and not periodic maintenance program in respect of all major equipment&apos;s especially power transformer.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Section 4 */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-              Post Graduate & Ph.D. Programs at TIFAC-CORE
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              PG program on “Condition Monitoring Control and Protection of Electrical Apparatus” (first of its kind in the country) was launched in June, 2009 as a collaborative endeavor between the TIFAC CORE and EED of NIT Hamirpur. Admissions in the program are normally made through Centralized Counseling Procedure for M.Tech Admission called CCMT with valid GATE score on all India basis. Some Ph.D. research scholars are also pursuing their research in the nodal themes related with TIFAC CORE.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+      {/* PG & PhD - Dark */}
+      <section className="py-24 bg-[#0a0f1a] text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Academics</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Post Graduate & Ph.D. Programs</h2>
+            <p className="text-white/40 leading-relaxed mb-6">
+              PG program on &quot;Condition Monitoring Control and Protection of Electrical Apparatus&quot; (first of its kind in the country) was launched in June, 2009 as a collaborative endeavor between the TIFAC CORE and EED of NIT Hamirpur. Admissions in the program are normally made through Centralized Counseling Procedure for M.Tech Admission called CCMT with valid GATE score on all India basis.
+            </p>
+            <p className="text-white/40 leading-relaxed mb-6">
               Research emphasis is given in industry need based identified topics for developing knowledge in thematic areas of power transformer diagnosis. Till July 2021, 149 Students of M Tech (CMEA) & 05 Ph.D. students have passed out in the emerging field of TIFAC CORE and serving in leading organizations.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-              One of our passed out Ph D scholar, Dr. Mohan is presently doing Post Doctoral Research at UQAC Canada in areas relevant to TIFAC- CORE NIT Hamirpur under the guidance of eminent Prof. Fofona & another passed out student Dr. Hasmat M. is pursuing Post Doctoral in Singapore. Similarly, many other alumnii of M tech Program on Condition Monitoring are serving as Faculty in NITs, IITs, and many are pursuing Phd in NITs/IITs. Some alumnii are serving in Public & Pvt. Sector Utilities as well eminent organization/institutes as well.
-              </p>
-            </div>
+            </p>
+            <p className="text-white/40 leading-relaxed">
+              Many alumni of M.Tech Program on Condition Monitoring are serving as Faculty in NITs, IITs, and many are pursuing Ph.D. in NITs/IITs. Some alumni are serving in Public & Private Sector Utilities as well as eminent organizations/institutes.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Section 5 */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-                Future Vision & Innovation
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                As we look toward the future, TIFAC Core remains committed to pushing the boundaries of transformer diagnostics and power system innovation. We&apos;re investing heavily in emerging technologies such as quantum computing, advanced materials science, and next-generation sensor technologies.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Our vision extends beyond traditional transformer diagnostics to encompass the entire smart grid ecosystem. We&apos;re developing solutions for renewable energy integration, energy storage systems, and grid modernization that will shape the future of power systems.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Sustainability and environmental responsibility are at the core of our future initiatives. We&apos;re working on technologies that will help reduce the environmental impact of power systems while improving efficiency and reliability for generations to come.
-              </p>
+      {/* Research Areas */}
+      <section className="py-24 bg-[#f7f7f7]">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Research</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-12">Major Research Areas</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {researchAreas.map((area, index) => (
+                <div key={index} className="bg-white p-6 rounded-xl border border-neutral-200 hover:border-blue-300 transition-colors group">
+                  <div className="text-blue-500 text-xs font-bold mb-3">{String(index + 1).padStart(2, '0')}</div>
+                  <h3 className="text-base font-bold text-[#0a0f1a] mb-2 group-hover:text-blue-600 transition-colors">{area.title}</h3>
+                  <p className="text-neutral-500 text-sm leading-relaxed">{area.description}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Section 6 */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-                Our Commitment to Excellence
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                TIFAC Core&apos;s legacy is built on an unwavering commitment to excellence in everything we do. From our rigorous research methodologies to our customer service standards, we maintain the highest levels of quality and professionalism.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                We believe that our success is measured not just by our technological achievements, but by the positive impact we have on our clients, the industry, and society as a whole. Every project we undertake is approached with the same dedication to excellence that has defined our organization since its founding.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                As we continue to build on our legacy, we remain focused on our core values of innovation, integrity, and excellence. These principles guide us as we work to solve the complex challenges facing the power industry and contribute to a more reliable and sustainable energy future.
-              </p>
+      {/* Future Vision - Dark CTA style */}
+      <section className="relative py-24 bg-[#0a0f1a] overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1554050546-c125a25df013?w=1400&q=80"
+            alt="Electrical infrastructure"
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="relative z-10 container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Vision</span>
             </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Future Vision & Innovation</h2>
+            <p className="text-white/40 leading-relaxed mb-6">
+              As we look toward the future, TIFAC Core remains committed to pushing the boundaries of transformer diagnostics and power system innovation. We&apos;re investing heavily in emerging technologies such as advanced materials science and next-generation sensor technologies.
+            </p>
+            <p className="text-white/40 leading-relaxed mb-6">
+              Our vision extends beyond traditional transformer diagnostics to encompass the entire smart grid ecosystem. We&apos;re developing solutions for renewable energy integration, energy storage systems, and grid modernization that will shape the future of power systems.
+            </p>
+            <p className="text-white/40 leading-relaxed">
+              Sustainability and environmental responsibility are at the core of our future initiatives. We&apos;re working on technologies that will help reduce the environmental impact of power systems while improving efficiency and reliability for generations to come.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Major Research Areas */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-                Major Research Areas
-              </h2>
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Ageing of Solid Insulations</h3>
-                  <p className="text-gray-700">Research and improvements in materials used for manufacturing power transformers, focusing on extending transformer life and reliability.</p>
+      {/* Future Plans */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Roadmap</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-10">Future Plans</h2>
+            <div className="space-y-5">
+              {futurePlans.map((plan, index) => (
+                <div key={index} className="flex items-start space-x-4 group">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#0a0f1a] flex items-center justify-center mt-0.5">
+                    <span className="text-blue-400 text-xs font-bold">{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+                  <p className="text-neutral-500 leading-relaxed pt-1">{plan}</p>
                 </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Fault Detection & Location</h3>
-                  <p className="text-gray-700">Detection and location of faults, including impact analysis of winding deformation due to short-circuit, transportation, and ageing processes.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Partial Discharge Measurement</h3>
-                  <p className="text-gray-700">Advanced applications of partial discharge measurement in fault diagnosis and predictive maintenance of power transformers.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Transformer Condition Monitoring</h3>
-                  <p className="text-gray-700">Development and implementation of best practices for transformer condition monitoring at operational sites.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Steel Industry Applications</h3>
-                  <p className="text-gray-700">Performance evaluation of transformers feeding steel industry, addressing unique operational challenges and requirements.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Insulation Oil-Paper Chemistry</h3>
-                  <p className="text-gray-700">Comprehensive study of insulation oil and paper chemistry to understand degradation mechanisms and improve material performance.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Wireless Technologies</h3>
-                  <p className="text-gray-700">Application of wireless-based technologies for prevention of catastrophic failures in power transformer systems.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Failure Analysis</h3>
-                  <p className="text-gray-700">Comprehensive failure analysis of power transformers to understand root causes and develop prevention strategies.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">RLA Studies</h3>
-                  <p className="text-gray-700">Remaining Life Assessment (RLA) studies on power transformers to optimize maintenance schedules and asset management.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Future Plans */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-                Future Plans
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To go in NABL accreditation in respect of TIFAC – CORE linked laboratories.</p>
+      {/* Major Facilities */}
+      <section className="py-24 bg-[#f7f7f7]">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Infrastructure</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0a0f1a] mb-4">Major Facilities</h2>
+            <p className="text-neutral-500 mb-12 max-w-2xl">Equipment and instruments available at TIFAC Centre, NIT Hamirpur for advanced transformer diagnostics.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {facilities.map((facility, index) => (
+                <div key={index} className="bg-white p-5 rounded-lg border border-neutral-200 hover:border-blue-300 transition-all hover:shadow-sm group">
+                  <h3 className="text-sm font-bold text-[#0a0f1a] mb-2 group-hover:text-blue-600 transition-colors">{facility.title}</h3>
+                  <p className="text-neutral-400 text-xs leading-relaxed">{facility.description}</p>
                 </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To liaison world class Centres/ Laboratories/ Institutes for promoting R & D in emerging areas of condition assessment of power apparatus.</p>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To interact with other state utilities/Nigams for partnering with TIFAC– CORE.</p>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To explore opportunities for getting industry sponsored projects.</p>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To provide ample employment opportunities to students of PG program &quot;Condition Monitoring Control and Protection of Electrical Apparatus&quot; in leading industries.</p>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To offer more and more training programs on modules relevant to industry/ electrical utilities for safer/ upkeep of electrical substation equipment&apos;s especially transformers.</p>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To develop learning material in area of R & D.</p>
-                </div>
-                
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-2 h-2 bg-blue-600 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">To promote collaborations with leading High Voltage test labs/ Institutes on mutual benefit basis.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Major Facilities */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-8 font-oxanium">
-                Major Facilities at TIFAC Centre NIT Hamirpur
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">M 4100 Insulation Analyzer</h3>
-                  <p className="text-gray-700 text-sm">Measures capacitance, Power factor and Watt losses in the solid/liquid insulation of power transformer. Also measures leakage reactance turns ratio, excitation current etc in service power transformers and power generator analysis.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">M 5200 Sweep Frequency Response Analyzer</h3>
-                  <p className="text-gray-700 text-sm">Utilized to detect the mechanical failure or movement of windings and core during short circuits, transportation, Re- location of Transformers.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Dirana</h3>
-                  <p className="text-gray-700 text-sm">To analyze the moisture of whole power transformer insulation, Dielectric properties of insulation within a wide frequency band.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">High Performance Liquid Chromatography</h3>
-                  <p className="text-gray-700 text-sm">To Measure the furans in the insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Thermal Imaging Camera</h3>
-                  <p className="text-gray-700 text-sm">To capture the thermal images of power transformer while in operation.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Flash Point</h3>
-                  <p className="text-gray-700 text-sm">To measure the flash point of insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Vib Scanner</h3>
-                  <p className="text-gray-700 text-sm">To measure the vibration of power transformer.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Fourier Transform Infrared Spectrophotometer</h3>
-                  <p className="text-gray-700 text-sm">To measure the oxidation inhibitors in the insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">ADTR-2K, Automatic Capacitance and Tan Delta Test Set</h3>
-                  <p className="text-gray-700 text-sm">Measures the capacitance dielectric constant tan delta and resistivity of insulation oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Columetric Karl Fischer Titrator</h3>
-                  <p className="text-gray-700 text-sm">To measure the water contents in the insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Breakdown Voltage Oil Test Set</h3>
-                  <p className="text-gray-700 text-sm">Measures the BDV of insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Interfacial Tension Analyzer</h3>
-                  <p className="text-gray-700 text-sm">Measure the Interfacial Tension of insulation oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Sludge and Sediments</h3>
-                  <p className="text-gray-700 text-sm">To measure the sludge and sediments in insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Domino Moisture in Oil Analyzer</h3>
-                  <p className="text-gray-700 text-sm">Measures the water/moisture contents in the insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Portable Dissolved Gas Analyzer</h3>
-                  <p className="text-gray-700 text-sm">Measures the dissolved gases in the insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Acidity Titrator</h3>
-                  <p className="text-gray-700 text-sm">To measure the acid contents in the insulating oil.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Combined TGA, DTA, DSC</h3>
-                  <p className="text-gray-700 text-sm">Measures the chemical analysis, oxidation induction and identification of paper insulation degradation.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">UV/VIS Spectrophotometer</h3>
-                  <p className="text-gray-700 text-sm">Measures the dissolved decay contents of insulating liquids.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Solid Breakdown Voltage Test Set</h3>
-                  <p className="text-gray-700 text-sm">Measures the BDV of insulating paper.</p>
-                </div>
-              </div>
+      {/* Excellence CTA */}
+      <section className="py-24 bg-[#0a0f1a] text-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center space-x-2 mb-6">
+              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+              <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Excellence</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+              Our commitment to<br />excellence continues
+            </h2>
+            <p className="text-white/40 leading-relaxed mb-10 max-w-xl mx-auto">
+              TIFAC Core&apos;s legacy is built on an unwavering commitment to excellence. From rigorous research methodologies to the highest standards of professionalism, we continue to push boundaries.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <Link href="/#team" className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors flex items-center space-x-2">
+                <span>Meet our team</span>
+                <ArrowRight size={16} />
+              </Link>
+              <Link href="/#contact" className="border border-white/25 hover:border-white/50 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors">
+                Get in touch
+              </Link>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 font-oxanium">
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-center space-x-2 mb-8">
-            <span className="text-white font-bold text-xl">TIFAC Core</span>
+      <footer className="bg-[#060a12] text-white">
+        <div className="container mx-auto px-6 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div>
+              <h3 className="text-xl font-bold mb-1 tracking-wider">TIFAC CORE</h3>
+              <p className="text-blue-400 text-[10px] uppercase tracking-[0.25em] mb-5">Transformer Diagnostics</p>
+              <p className="text-white/30 text-sm leading-relaxed">
+                Advanced transformer diagnostics centre at the Department of Electrical Engineering, National Institute of Technology Hamirpur.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-5">Quick Links</h4>
+              <ul className="space-y-3">
+                <li><Link href="/#about" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>About Us</span></Link></li>
+                <li><Link href="/#team" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Our Team</span></Link></li>
+                <li><Link href="/#services" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Services</span></Link></li>
+                <li><Link href="/legacy" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Legacy</span></Link></li>
+                <li><a href="https://nith.ac.in" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ExternalLink size={12} /><span>NIT Hamirpur</span></a></li>
+                <li><a href="https://nith.ac.in/electrical-engineering" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ExternalLink size={12} /><span>EE Department</span></a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-5">Explore Legacy</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Mission REACH</span></a></li>
+                <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Research Areas</span></a></li>
+                <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>PG & PhD Programs</span></a></li>
+                <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Facilities</span></a></li>
+                <li><a href="#" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Future Plans</span></a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-5">Contact Us</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start space-x-3">
+                  <MapPin size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <span className="text-white/30 text-sm">TIFAC Core, EE Department, NIT Hamirpur, Himachal Pradesh 177005</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Phone size={13} className="text-blue-400 shrink-0" />
+                  <span className="text-white/30 text-sm">+91 7400321092</span>
+                </li>
+                <li className="flex items-center space-x-3">
+                  <Mail size={13} className="text-blue-400 shrink-0" />
+                  <span className="text-white/30 text-sm">tifac@nith.ac.in</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="text-center text-gray-400">
-            <p>&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
+        </div>
+
+        <div className="border-t border-white/5">
+          <div className="container mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between">
+            <p className="text-white/20 text-xs">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
+            <div className="flex items-center space-x-6 mt-3 md:mt-0">
+              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-xs">Privacy Policy</a>
+              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-xs">Terms of Use</a>
+              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-xs">Sitemap</a>
+            </div>
           </div>
         </div>
       </footer>
