@@ -101,7 +101,7 @@ const LegacyPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-[#0a0f1a] overflow-hidden">
+      <section className="relative bg-[#0a0f1a] overflow-hidden min-h-[calc(100vh-3.5rem)] sm:min-h-[calc(100vh-4rem)] flex flex-col">
         <div className="absolute inset-0">
           <video
             src="/legacy.mp4"
@@ -114,8 +114,9 @@ const LegacyPage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/70 to-[#0a0f1a]/40" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6">
-          <div className="pt-16 sm:pt-24 pb-12 sm:pb-20 max-w-3xl">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 flex-1 flex flex-col">
+          <div className="flex-1 flex items-center">
+          <div className="max-w-3xl py-8">
             <div className="flex items-center space-x-2 mb-4 sm:mb-6">
               <Link href="/" className="text-white/40 hover:text-white/60 transition-colors text-xs sm:text-sm">Home</Link>
               <ChevronRight size={12} className="text-white/30" />
@@ -128,6 +129,7 @@ const LegacyPage = () => {
             <p className="text-white/50 text-base sm:text-lg mb-8 sm:mb-10 max-w-xl leading-relaxed">
               Discover the rich history and groundbreaking achievements that have shaped TIFAC Core into a leader in transformer diagnostics and power system innovation.
             </p>
+          </div>
           </div>
 
           {/* Stats Row */}
