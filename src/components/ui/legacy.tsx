@@ -75,7 +75,7 @@ const LegacyPage = () => {
             </div>
 
             <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-              <span className="text-white text-base sm:text-lg font-bold tracking-wider">TIFAC CORE</span>
+              <span className="text-white text-base sm:text-lg tracking-wider">TIFAC CORE</span>
             </Link>
 
             <div className="flex items-center space-x-4 sm:space-x-6">
@@ -133,7 +133,7 @@ const LegacyPage = () => {
           </div>
 
           {/* Stats Row */}
-          <div className="border-t border-white/10 py-8 sm:py-10">
+          <div className="py-8 sm:py-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               <div>
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">2000</div>
@@ -427,8 +427,6 @@ const LegacyPage = () => {
           <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between">
             <p className="text-white/20 text-[10px] sm:text-xs text-center sm:text-left">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
             <div className="flex items-center space-x-4 sm:space-x-6 mt-2 sm:mt-0">
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Privacy Policy</a>
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Terms of Use</a>
               <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Sitemap</a>
             </div>
           </div>

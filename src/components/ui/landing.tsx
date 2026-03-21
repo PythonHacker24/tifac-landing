@@ -163,7 +163,7 @@ const EnergySteel = () => {
             </div>
 
             <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-              <span className="text-white text-base sm:text-lg font-bold tracking-wider">TIFAC CORE</span>
+              <span className="text-white text-base sm:text-lg tracking-wider">TIFAC CORE</span>
             </Link>
 
             <div className="flex items-center space-x-4 sm:space-x-6">
@@ -630,8 +630,6 @@ const EnergySteel = () => {
           <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between">
             <p className="text-white/20 text-[10px] sm:text-xs text-center sm:text-left">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
             <div className="flex items-center space-x-4 sm:space-x-6 mt-2 sm:mt-0">
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Privacy Policy</a>
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Terms of Use</a>
               <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Sitemap</a>
             </div>
           </div>
