@@ -167,10 +167,7 @@ const EnergySteel = () => {
             </Link>
 
             <div className="flex items-center space-x-4 sm:space-x-6">
-              <a href="tel:+919418847240" className="hidden md:flex items-center space-x-1.5 text-white/60 hover:text-white transition-colors text-sm">
-                <Phone size={13} />
-                <span>+91-94188-47240</span>
-              </a>
+              <a href="#get-in-touch" className="hidden md:block text-white/60 hover:text-white transition-colors text-sm">Contact</a>
               <a href="/legacy" className="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-medium px-3 sm:px-5 py-2 rounded transition-colors">
                 Explore legacy
               </a>
@@ -614,7 +611,7 @@ const EnergySteel = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone size={13} className="text-blue-400 shrink-0" />
-                  <span className="text-white/30 text-xs sm:text-sm">+91 7400321092</span>
+                  <span className="text-white/30 text-xs sm:text-sm">+91-94188-47240</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail size={13} className="text-blue-400 shrink-0" />
