@@ -372,10 +372,7 @@ const EnergySteel = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1a] via-[#0a0f1a]/80 to-[#0a0f1a]/60" />
         </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
-          <div className="flex items-center justify-center space-x-2 mb-6">
-            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-            <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">What We Deliver</span>
-          </div>
+          <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">What We Deliver</span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6 max-w-2xl mx-auto">
             Industrial energy,<br />
             engineered to last
@@ -420,10 +417,7 @@ const EnergySteel = () => {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">About TIFAC Core</span>
-              </div>
+              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">About TIFAC Core</span>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#0a0f1a] mb-6 leading-tight">
                 Pioneering transformer
                 diagnostics since 2000
@@ -464,10 +458,7 @@ const EnergySteel = () => {
       <section id="team" className="py-16 sm:py-24 bg-[#0a0f1a] text-white">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-10 sm:mb-14 text-center">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-              <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em]">Our Team</span>
-            </div>
+            <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">Our Team</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Our diagnostics experts
             </h2>
@@ -475,11 +466,7 @@ const EnergySteel = () => {
 
           {facultyCategories.map((category, catIndex) => (
             <div key={catIndex} className="mb-12 sm:mb-16">
-              <div className="flex items-center space-x-3 mb-6 sm:mb-8 pb-3 sm:pb-4 border-b border-white/10">
-                <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                <h3 className="text-base sm:text-lg font-semibold text-white/80">{category.title}</h3>
-                <div className="flex-1" />
-              </div>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">{category.title}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-6 sm:gap-y-10">
                 {category.members.map((member, index) => (
                   <div key={index} className="group text-center">
@@ -506,10 +493,7 @@ const EnergySteel = () => {
         <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-50 rounded-full translate-x-1/3 translate-y-1/3" />
         <div className="relative z-10 container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-14">
-            <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-              <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em]">Get in Touch</span>
-            </div>
+            <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">Get in Touch</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0a0f1a] leading-tight mb-5">
               Ready to optimize your
               transformer performance?
