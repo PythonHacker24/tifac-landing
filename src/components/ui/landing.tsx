@@ -58,43 +58,43 @@ const EnergySteel = () => {
     {
       title: "Professors",
       members: [
-        { name: "Prof. H.M. Suryawanshi", bio: "Power Electronics & Drives and Power System", image: "https://vnit.ac.in/engineering/electrical/wp-content/uploads/2022/12/hmsuryawanshi.jpg", profile: "https://vnit.ac.in/engineering/electrical/dr-h-m-suryawanshi/" },
-        { name: "Prof. Sushil Chauhan", bio: "AI Applications in Power System Analysis", image: "https://portfolios.nith.ac.in/uploads/member_details/88.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-sushil-chauhan219" },
-        { name: "Prof. Ram Naresh Sharma", bio: "Power System Operation and Control", image: "https://portfolios.nith.ac.in/uploads/member_details/89.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ram-naresh-sharma-" },
-        { name: "Prof. Ashwani Chandel", bio: "Power System", image: "https://portfolios.nith.ac.in/uploads/member_details/90.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ashwani-kumar-chandel-" },
+        { name: "Prof. H.M. Suryawanshi", bio: "Power Electronics & Drives and Power System", image: "/suryawanshi.jpg", profile: "https://vnit.ac.in/engineering/electrical/dr-h-m-suryawanshi/" },
+        { name: "Prof. Sushil Chauhan", bio: "AI Applications in Power System Analysis", image: "/chauhan.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-sushil-chauhan219" },
+        { name: "Prof. Ram Naresh Sharma", bio: "Power System Operation and Control", image: "/ramnaresh.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ram-naresh-sharma-" },
+        { name: "Prof. Ashwani Chandel", bio: "Power System", image: "/chandel.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ashwani-kumar-chandel-" },
       ],
     },
     {
       title: "Associate Professors",
       members: [
-        { name: "Dr. Ravinder Nath", bio: "Signal Processing & Control", image: "https://portfolios.nith.ac.in/uploads/member_details/92.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ravinder-nath650" },
-        { name: "Dr. (Mrs.) Veena Sharma", bio: "Instrumentation and Control Engineering, Power System Operation and Control", image: "https://portfolios.nith.ac.in/uploads/member_details/93.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-veena-sharma-" },
-        { name: "Dr. Raj Kumar Jarial", bio: "Power Electronics, Electrical Machines & Drives, Condition Monitoring, High Voltage Systems", image: "https://portfolios.nith.ac.in/uploads/member_details/94.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-r-k-jarial84" },
-        { name: "Dr. Bharat Bhushan Sharma", bio: "Nonlinear Dynamics and Control", image: "https://portfolios.nith.ac.in/uploads/member_details/95.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-bharat-bhushan-sharma-" },
-        { name: "Dr. O. P. Rahi", bio: "Power System, Hydro Power, Renewable Energy", image: "https://portfolios.nith.ac.in/uploads/member_details/96.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-o-p-rahi972" },
-        { name: "Dr. Amit Kaul", bio: "Signal Processing & Control", image: "https://portfolios.nith.ac.in/uploads/member_details/98.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-amit-kaul-" },
+        { name: "Dr. Ravinder Nath", bio: "Signal Processing & Control", image: "/ravinder.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ravinder-nath650" },
+        { name: "Dr. (Mrs.) Veena Sharma", bio: "Instrumentation and Control Engineering, Power System Operation and Control", image: "/veena.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-veena-sharma-" },
+        { name: "Dr. Raj Kumar Jarial", bio: "Power Electronics, Electrical Machines & Drives, Condition Monitoring, High Voltage Systems", image: "/jarial.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-r-k-jarial84" },
+        { name: "Dr. Bharat Bhushan Sharma", bio: "Nonlinear Dynamics and Control", image: "/bharatbhushan.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-bharat-bhushan-sharma-" },
+        { name: "Dr. O. P. Rahi", bio: "Power System, Hydro Power, Renewable Energy", image: "/rahi.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-o-p-rahi972" },
+        { name: "Dr. Amit Kaul", bio: "Signal Processing & Control", image: "/amitkaul.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-amit-kaul-" },
       ],
     },
     {
       title: "Assistant Professors Grade-I",
       members: [
-        { name: "Dr. Himesh Handa", bio: "Control Systems", image: "https://portfolios.nith.ac.in/uploads/member_details/97.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-himesh-handa551" },
-        { name: "Dr. Rajesh Kumar", bio: "Power System, Renewable Energy, Optimisation, Scheduling", image: "https://portfolios.nith.ac.in/uploads/member_details/161.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/er-rajesh-kumar-" },
-        { name: "Dr. Bharti Bakshi Koul", bio: "Power System", image: "https://portfolios.nith.ac.in/uploads/member_details/100.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/ms-bharti-kaul144" },
-        { name: "Dr. Ram Niwash Mahia", bio: "Networked Control Systems, Complex Networks, Power Networks and Multi-Agent Systems", image: "https://portfolios.nith.ac.in/uploads/member_details/348.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ram-niwash-mahia" },
+        { name: "Dr. Himesh Handa", bio: "Control Systems", image: "/handa.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-himesh-handa551" },
+        { name: "Dr. Rajesh Kumar", bio: "Power System, Renewable Energy, Optimisation, Scheduling", image: "/rajeshkumar.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/er-rajesh-kumar-" },
+        { name: "Dr. Bharti Bakshi Koul", bio: "Power System", image: "/bhartibakshi.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/ms-bharti-kaul144" },
+        { name: "Dr. Ram Niwash Mahia", bio: "Networked Control Systems, Complex Networks, Power Networks and Multi-Agent Systems", image: "/ramniwash.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ram-niwash-mahia" },
         { name: "Dr. Chandrasekaran S", bio: "Grid Synchronization Techniques, Cyber Security of Power Electronic and Power Systems", image: "/chand.jpg", profile: "http://portfolio.nith.ac.in/faculty/chandru" },
         { name: "Dr. Vivek Sharma", bio: "Instrumentation and Control Engineering", image: "/vivek.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-vivek-sharma" },
-        { name: "Dr. Jiwanjot Singh", bio: "Power Electronics, Power Quality and Renewable Energy Systems", image: "https://portfolios.nith.ac.in/uploads/member_details/407.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-jiwanjot-singh" },
+        { name: "Dr. Jiwanjot Singh", bio: "Power Electronics, Power Quality and Renewable Energy Systems", image: "/jiwanjot.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-jiwanjot-singh" },
       ],
     },
     {
       title: "Assistant Professors Grade-II",
       members: [
-        { name: "Dr. Supriya Jaiswal", bio: "Power Quality (Power System)", image: "https://portfolios.nith.ac.in/uploads/member_details/373.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-supriya-jaiswal" },
-        { name: "Dr. Pankaj Kumar Mishra", bio: "Control System, Nonlinear Control, Mathematical Control Theory, Machine Learning", image: "https://portfolios.nith.ac.in/uploads/member_details/406.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-pankaj-kumar-mishra" },
+        { name: "Dr. Supriya Jaiswal", bio: "Power Quality (Power System)", image: "/supriya.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-supriya-jaiswal" },
+        { name: "Dr. Pankaj Kumar Mishra", bio: "Control System, Nonlinear Control, Mathematical Control Theory, Machine Learning", image: "/pankajmishra.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-pankaj-kumar-mishra" },
         { name: "Dr. Sreeram TS", bio: "Power System", image: "/sreeram.jpeg", profile: "https://portfolio.nith.ac.in/faculty/sreeram" },
-        { name: "Dr. Katam Nishanth", bio: "Non-Thermal Plasma, AI and ML Applications", image: "https://portfolios.nith.ac.in/uploads/member_details/391.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-katam-nishanth" },
-        { name: "Dr. Upasana Sarma", bio: "Power System and Power Electronics", image: "https://portfolios.nith.ac.in/uploads/member_details/408.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-upasana-sarma" },
+        { name: "Dr. Katam Nishanth", bio: "Non-Thermal Plasma, AI and ML Applications", image: "/nishanth.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-katam-nishanth" },
+        { name: "Dr. Upasana Sarma", bio: "Power System and Power Electronics", image: "/upasana.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-upasana-sarma" },
       ],
     },
   ];
@@ -167,7 +167,10 @@ const EnergySteel = () => {
             </Link>
 
             <div className="flex items-center space-x-4 sm:space-x-6">
-              <a href="#get-in-touch" className="hidden md:block text-white/60 hover:text-white transition-colors text-sm">Contact</a>
+              <a href="tel:+919418847240" className="hidden md:flex items-center space-x-1.5 text-white/60 hover:text-white transition-colors text-sm">
+                <Phone size={13} />
+                <span>+91-94188-47240</span>
+              </a>
               <a href="/legacy" className="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-medium px-3 sm:px-5 py-2 rounded transition-colors">
                 Explore legacy
               </a>
