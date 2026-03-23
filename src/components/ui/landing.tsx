@@ -92,7 +92,7 @@ const EnergySteel = () => {
       members: [
         { name: "Dr. Supriya Jaiswal", bio: "Power Quality (Power System)", image: "/supriya.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-supriya-jaiswal" },
         { name: "Dr. Pankaj Kumar Mishra", bio: "Control System, Nonlinear Control, Mathematical Control Theory, Machine Learning", image: "/pankajmishra.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-pankaj-kumar-mishra" },
-        { name: "Dr. Sreeram TS", bio: "Power System", image: "/sreeram.jpeg", profile: "https://portfolio.nith.ac.in/faculty/sreeram" },
+        { name: "Dr. Sreeram TS", bio: "Power System", image: "/sreeram.jpg", profile: "https://portfolio.nith.ac.in/faculty/sreeram" },
         { name: "Dr. Katam Nishanth", bio: "Non-Thermal Plasma, AI and ML Applications", image: "/nishanth.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-katam-nishanth" },
         { name: "Dr. Upasana Sarma", bio: "Power System and Power Electronics", image: "/upasana.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-upasana-sarma" },
       ],
@@ -483,11 +483,11 @@ const EnergySteel = () => {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-6 sm:gap-y-10">
                 {category.members.map((member, index) => (
                   <div key={index} className="group text-center">
-                    <div className="relative mx-auto w-28 sm:w-40 mb-3 sm:mb-4">
+                    <div className="relative mx-auto w-36 sm:w-48 mb-3 sm:mb-4">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-28 h-36 sm:w-40 sm:h-52 object-cover rounded-lg border border-white/10 group-hover:border-blue-500/50 transition-all duration-300 bg-white/5"
+                        className="w-36 h-44 sm:w-48 sm:h-60 object-cover object-top rounded-lg border border-white/10 group-hover:border-blue-500/50 transition-all duration-300 bg-white/5"
                       />
                     </div>
                     <a href={member.profile} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold mb-1 group-hover:text-blue-400 transition-colors inline-block hover:underline">{member.name}</a>
