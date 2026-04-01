@@ -54,11 +54,15 @@ const EnergySteel = () => {
     },
   ];
 
+  const directorRegistrar = [
+    { role: "Director", name: "Prof. H.M. Suryawanshi", bio: "Power Electronics & Drives and Power System", image: "/suryawanshi.jpg", profile: "https://vnit.ac.in/engineering/electrical/dr-h-m-suryawanshi/" },
+    { role: "Registrar", name: "Dr. Archana Santosh Nanoty", bio: "Registrar, NIT Hamirpur", image: "/nanoty.jpg", profile: "https://nith.ac.in/Administration/topic/273" },
+  ];
+
   const facultyCategories = [
     {
       title: "Professors",
       members: [
-        { name: "Prof. H.M. Suryawanshi", bio: "Power Electronics & Drives and Power System", image: "/suryawanshi.jpg", profile: "https://vnit.ac.in/engineering/electrical/dr-h-m-suryawanshi/" },
         { name: "Prof. Sushil Chauhan", bio: "AI Applications in Power System Analysis", image: "/chauhan.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-sushil-chauhan219" },
         { name: "Prof. Ram Naresh Sharma", bio: "Power System Operation and Control", image: "/ramnaresh.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ram-naresh-sharma-" },
         { name: "Prof. Ashwani Chandel", bio: "Power System", image: "/chandel.jpg", profile: "https://portfolios.nith.ac.in/index.php?/nith/dr-ashwani-kumar-chandel-" },
@@ -464,6 +468,26 @@ const EnergySteel = () => {
             </h2>
           </div>
 
+          {/* Director & Registrar */}
+          <div className="mb-12 sm:mb-16">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">Director &amp; Registrar</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-6 sm:gap-y-10">
+              {directorRegistrar.map((person, index) => (
+                <div key={index} className="group text-center">
+                  <div className="relative mx-auto w-36 sm:w-48 mb-3 sm:mb-4">
+                    <img
+                      src={person.image}
+                      alt={person.name}
+                      className="w-36 h-44 sm:w-48 sm:h-60 object-cover object-top rounded-lg border border-white/10 group-hover:border-blue-500/50 transition-all duration-300 bg-white/5"
+                    />
+                  </div>
+                  <a href={person.profile} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold mb-1 group-hover:text-blue-400 transition-colors inline-block hover:underline">{person.name}</a>
+                  <p className="text-white/30 text-[10px] sm:text-xs leading-relaxed hidden sm:block">{person.bio}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {facultyCategories.map((category, catIndex) => (
             <div key={catIndex} className="mb-12 sm:mb-16">
               <h3 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">{category.title}</h3>
@@ -488,17 +512,26 @@ const EnergySteel = () => {
       </section>
 
       {/* Get in Touch CTA */}
-      <section id="get-in-touch" className="relative bg-white py-16 sm:py-24 overflow-hidden">
-        <div className="absolute top-0 left-0 w-48 sm:w-72 h-48 sm:h-72 bg-blue-50 rounded-full -translate-x-1/2 -translate-y-1/2" />
-        <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-blue-50 rounded-full translate-x-1/3 translate-y-1/3" />
+      <section id="get-in-touch" className="relative bg-[#0a0f1a] py-16 sm:py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <video
+            src="/mill.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1a]/60 via-[#0a0f1a]/40 to-[#0a0f1a]/70" />
+        </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-14">
-            <span className="text-blue-600 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">Get in Touch</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0a0f1a] leading-tight mb-5">
+            <span className="text-blue-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">Get in Touch</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
               Ready to optimize your
               transformer performance?
             </h2>
-            <p className="text-neutral-500 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+            <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
               Whether you need a one-time diagnostic audit or an ongoing monitoring partnership, reach out to our team.
             </p>
           </div>

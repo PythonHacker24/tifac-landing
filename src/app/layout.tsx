@@ -11,6 +11,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "TIFAC Core | Transformer Diagnostics",
   description: "Advanced transformer diagnostics for reliable power infrastructure - TIFAC Core, NIT Hamirpur",
+
 };
 
 export default function RootLayout({
