@@ -42,8 +42,6 @@ const getSupervisorUrl = (name: string): string | null => {
 
 const LegacyPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeBatch, setActiveBatch] = useState(0);
-
   const renderSupervisor = (supervisor: string) => {
     const parts = supervisor.split(/\s*&\s*/);
     return (
@@ -356,6 +354,8 @@ const LegacyPage = () => {
     },
   ];
 
+  const [activeBatch, setActiveBatch] = useState(dissertationBatches.length - 1);
+
   const researchAreas = [
     { title: "Ageing of Solid Insulations", description: "Research and improvements in materials used for manufacturing power transformers, focusing on extending transformer life and reliability." },
     { title: "Fault Detection & Location", description: "Detection and location of faults, including impact analysis of winding deformation due to short-circuit, transportation, and ageing processes." },
@@ -606,32 +606,23 @@ const LegacyPage = () => {
               A complete record of dissertation work by M.Tech graduates of the Condition Monitoring, Control &amp; Protection of Electrical Apparatus program since its inception in 2009.
             </p>
 
-            {/* Batch Year Tabs */}
-            <div className="relative mb-8">
-              <div className="flex overflow-x-auto gap-1.5 pb-3 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                {dissertationBatches.map((batch, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveBatch(index)}
-                    className={`flex-shrink-0 flex flex-col items-center px-3.5 py-2.5 rounded-xl border transition-all duration-150 ${
-                      activeBatch === index
-                        ? 'bg-[#0a0f1a] border-[#0a0f1a] text-white shadow-sm'
-                        : 'bg-white border-neutral-200 text-neutral-500 hover:border-neutral-300 hover:text-[#0a0f1a] hover:bg-neutral-50'
-                    }`}
-                  >
-                    <span className={`text-[10px] font-bold uppercase tracking-widest leading-none mb-1 ${activeBatch === index ? 'text-blue-400' : 'text-neutral-400'}`}>Batch</span>
-                    <span className="text-xs font-semibold leading-none whitespace-nowrap">{batch.period}</span>
-                  </button>
-                ))}
+            {/* Batch Selector */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div className="relative">
+                <select
+                  value={activeBatch}
+                  onChange={(e) => setActiveBatch(Number(e.target.value))}
+                  className="appearance-none bg-[#0a0f1a] text-white text-sm font-semibold pl-4 pr-10 py-2.5 rounded-lg border border-[#0a0f1a] cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+                >
+                  {dissertationBatches.map((batch, index) => (
+                    <option key={index} value={index}>
+                      Batch {batch.period}{index === dissertationBatches.length - 1 ? ' (Current)' : ''}
+                    </option>
+                  ))}
+                </select>
+                <svg className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/60 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </div>
-            </div>
-
-            {/* Active Batch Header */}
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <span className="text-[#0a0f1a] text-sm font-semibold">Batch {dissertationBatches[activeBatch].period}</span>
-                <span className="ml-3 text-neutral-400 text-xs">{dissertationBatches[activeBatch].students.length} students</span>
-              </div>
+              <span className="text-neutral-400 text-xs">{dissertationBatches[activeBatch].students.length} students</span>
               {activeBatch === dissertationBatches.length - 1 && (
                 <span className="text-[10px] font-semibold uppercase tracking-wider text-amber-600 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full">
                   Currently Enrolled

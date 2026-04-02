@@ -235,76 +235,54 @@ const EnergySteel = () => {
                 Schedule a call
               </button>
             </div>
+            <p className="text-white/30 text-xs mt-5 tracking-wide">A facility at National Institute of Technology Hamirpur</p>
             </div>
           </div>
 
-          {/* Clients */}
-          <div className="py-6 sm:py-8">
-            <div className="flex items-center justify-between mb-4 sm:mb-5">
-              <span className="text-white/30 text-xs font-semibold uppercase tracking-[0.2em]">Trusted by Industry Leaders</span>
-              <button
-                onClick={() => setShowAllClients(!showAllClients)}
-                className="text-blue-400 hover:text-blue-300 text-xs font-semibold uppercase tracking-wider transition-colors flex items-center space-x-1"
-              >
-                <span>{showAllClients ? 'Close' : 'View all'}</span>
-                <ChevronRight size={12} className={`transition-transform ${showAllClients ? 'rotate-90' : ''}`} />
-              </button>
-            </div>
+        </div>
+      </section>
 
-            {!showAllClients ? (
-              <div className="relative overflow-hidden">
-                <div className="flex animate-[marquee_12s_linear_infinite] whitespace-nowrap">
-                  {[
-                    "HPSEBL, Shimla",
-                    "Larji Power House, Kullu",
-                    "Voith Hydro Pvt Ltd, NOIDA",
-                    "NTPC Koldam",
-                    "HP Power Corporation Ltd",
-                    "HP Transmission Corp Ltd",
-                    "BVPCL, Jogindernagar",
-                    "Everest Power Pvt Ltd",
-                    "Crest Steel & Power, Una",
-                    "Faiveley Transport, Baddi",
-                    "Winsome Textile, Baddi",
-                    "Luminous Industries, Una",
-                    "JP Enterprises, Hamirpur",
-                    "Jaypee University, Waknaghat",
-                    "HPSEBL, Shimla",
-                    "Larji Power House, Kullu",
-                    "Voith Hydro Pvt Ltd, NOIDA",
-                    "NTPC Koldam",
-                    "HP Power Corporation Ltd",
-                    "HP Transmission Corp Ltd",
-                    "BVPCL, Jogindernagar",
-                    "Everest Power Pvt Ltd",
-                    "Crest Steel & Power, Una",
-                    "Faiveley Transport, Baddi",
-                    "Winsome Textile, Baddi",
-                    "Luminous Industries, Una",
-                    "JP Enterprises, Hamirpur",
-                    "Jaypee University, Waknaghat",
-                  ].map((client, index) => (
-                    <span key={index} className="inline-flex items-center mx-5 sm:mx-8 text-white text-base sm:text-lg font-medium shrink-0">
-                      {client}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-                {clientCategories.map((cat, catIndex) => (
-                  <div key={catIndex}>
-                    <h4 className="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">{cat.category}</h4>
-                    <ul className="space-y-2">
-                      {cat.clients.map((client, index) => (
-                        <li key={index} className="text-white/70 text-xs sm:text-sm leading-relaxed">{client}</li>
-                      ))}
-                    </ul>
-                  </div>
+      {/* Clients */}
+      <section className="bg-[#0a0f1a] py-6 sm:py-8">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between mb-4 sm:mb-5">
+            <span className="text-white/30 text-xs font-semibold uppercase tracking-[0.2em]">Trusted by Industry Leaders</span>
+            <button
+              onClick={() => setShowAllClients(!showAllClients)}
+              className="text-blue-400 hover:text-blue-300 text-xs font-semibold uppercase tracking-wider transition-colors flex items-center space-x-1"
+            >
+              <span>{showAllClients ? 'Close' : 'View all'}</span>
+              <ChevronRight size={12} className={`transition-transform duration-200 ${showAllClients ? 'rotate-90' : ''}`} />
+            </button>
+          </div>
+
+          {!showAllClients ? (
+            <div className="relative overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#0a0f1a] to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#0a0f1a] to-transparent z-10 pointer-events-none" />
+              <div className="flex animate-[marquee_40s_linear_infinite] whitespace-nowrap">
+                {[...clientCategories.flatMap(cat => cat.clients), ...clientCategories.flatMap(cat => cat.clients)].map((client, index) => (
+                  <span key={index} className="inline-flex items-center shrink-0 text-white/80 text-sm sm:text-base font-medium">
+                    <span className="mx-4 sm:mx-6">{client}</span>
+                    <span className="text-white/20">·</span>
+                  </span>
                 ))}
               </div>
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+              {clientCategories.map((cat, catIndex) => (
+                <div key={catIndex}>
+                  <h4 className="text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4">{cat.category}</h4>
+                  <ul className="space-y-2">
+                    {cat.clients.map((client, index) => (
+                      <li key={index} className="text-white/70 text-xs sm:text-sm leading-relaxed">{client}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -399,11 +377,11 @@ const EnergySteel = () => {
       {/* Pillars Section */}
       <section className="bg-white py-16 sm:py-20 border-b border-neutral-100">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-neutral-200">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon;
               return (
-                <div key={index} className="px-4 lg:px-8 lg:first:pl-0 lg:last:pr-0 text-center">
+                <div key={index} className="text-center">
                   <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0a0f1a] mb-4 sm:mb-5">
                     <Icon size={18} className="text-blue-400" />
                   </div>
