@@ -460,7 +460,7 @@ const EnergySteel = () => {
                     />
                   </div>
                   <a href={person.profile} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold mb-1 group-hover:text-blue-400 transition-colors inline-block hover:underline">{person.name}</a>
-                  <p className="text-white/30 text-[10px] sm:text-xs leading-relaxed hidden sm:block">{person.bio}</p>
+                  <p className="text-white/30 text-[10px] sm:text-xs leading-relaxed">{person.bio}</p>
                 </div>
               ))}
             </div>
@@ -480,7 +480,7 @@ const EnergySteel = () => {
                       />
                     </div>
                     <a href={member.profile} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold mb-1 group-hover:text-blue-400 transition-colors inline-block hover:underline">{member.name}</a>
-                    <p className="text-white/30 text-[10px] sm:text-xs leading-relaxed hidden sm:block">{member.bio}</p>
+                    <p className="text-white/30 text-[10px] sm:text-xs leading-relaxed">{member.bio}</p>
                   </div>
                 ))}
               </div>
