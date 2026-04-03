@@ -55,8 +55,8 @@ const EnergySteel = () => {
   ];
 
   const directorRegistrar = [
-    { role: "Director", name: "Prof. H.M. Suryawanshi", bio: "Power Electronics & Drives and Power System", image: "/suryawanshi.jpg", profile: "https://vnit.ac.in/engineering/electrical/dr-h-m-suryawanshi/" },
-    { role: "Registrar", name: "Dr. Archana Santosh Nanoty", bio: "Registrar, NIT Hamirpur", image: "/nanoty.jpg", profile: "https://nith.ac.in/Administration/topic/273" },
+    { role: "Director, NIT Hamirpur", name: "Prof. H.M. Suryawanshi", bio: "Power Electronics & Drives and Power System", image: "/suryawanshi.jpg", profile: "https://vnit.ac.in/engineering/electrical/dr-h-m-suryawanshi/" },
+    { role: "Registrar, NIT Hamirpur", name: "Dr. Archana Santosh Nanoty", bio: "Registrar, NIT Hamirpur", image: "/nanoty.jpg", profile: "https://nith.ac.in/Administration/topic/273" },
   ];
 
   const facultyCategories = [
