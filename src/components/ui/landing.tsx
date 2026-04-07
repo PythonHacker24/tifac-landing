@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { ChevronRight, Phone, Mail, MapPin, ExternalLink, Zap, Shield, BarChart3, Leaf, ArrowRight, Menu, X } from 'lucide-react';
+import { ChevronRight, Phone, Mail, MapPin, ExternalLink, Zap, Shield, BarChart3, Leaf, ArrowRight, Menu, X, Download } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
@@ -234,6 +234,14 @@ const EnergySteel = () => {
               >
                 Schedule a call
               </button>
+              <a
+                href="/brochure.pdf"
+                download
+                className="border border-white/25 text-white text-sm font-semibold px-7 py-3.5 rounded hover:border-white/50 transition-colors flex items-center justify-center space-x-2"
+              >
+                <Download size={16} />
+                <span>Brochure</span>
+              </a>
             </div>
             <p className="text-white/30 text-xs mt-5 tracking-wide">A facility at National Institute of Technology Hamirpur</p>
             </div>
@@ -362,15 +370,25 @@ const EnergySteel = () => {
           <p className="text-white/40 text-sm sm:text-base max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed">
             Technical audits and system improvements to increase efficiency and system reliability across your transformer fleet.
           </p>
-          <button
-            onClick={() => {
-              const el = document.getElementById('get-in-touch');
-              el?.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors"
-          >
-            Request audit
-          </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+            <button
+              onClick={() => {
+                const el = document.getElementById('get-in-touch');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-8 py-3.5 rounded transition-colors"
+            >
+              Request audit
+            </button>
+            <a
+              href="/brochure.pdf"
+              download
+              className="border border-white/25 text-white text-sm font-semibold px-8 py-3.5 rounded hover:border-white/50 transition-colors flex items-center space-x-2"
+            >
+              <Download size={16} />
+              <span>Download brochure</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -568,54 +586,59 @@ const EnergySteel = () => {
             <div className="col-span-2 md:col-span-1">
               <h3 className="text-xl font-bold mb-1 tracking-wider">TIFAC CORE</h3>
               <p className="text-blue-400 text-[10px] uppercase tracking-[0.25em] mb-5">Transformer Diagnostics</p>
-              <p className="text-white/30 text-sm leading-relaxed">
+              <p className="text-white/50 text-sm leading-relaxed">
                 Advanced transformer diagnostics centre at the Department of Electrical Engineering, National Institute of Technology Hamirpur.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-4 sm:mb-5">Quick Links</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/80 mb-4 sm:mb-5">Quick Links</h4>
               <ul className="space-y-2.5 sm:space-y-3">
-                <li><a href="#about" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>About Us</span></a></li>
-                <li><a href="#team" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Our Team</span></a></li>
-                <li><a href="#services" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Services</span></a></li>
-                <li><a href="/legacy" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Legacy</span></a></li>
-                <li><a href="https://nith.ac.in" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ExternalLink size={12} /><span>NIT Hamirpur</span></a></li>
-                <li><a href="https://nith.ac.in/electrical-engineering" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ExternalLink size={12} /><span>EE Department</span></a></li>
+                <li><a href="#about" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>About Us</span></a></li>
+                <li><a href="#team" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Our Team</span></a></li>
+                <li><a href="#services" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Services</span></a></li>
+                <li><a href="/legacy" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>Legacy</span></a></li>
+                <li><a href="https://nith.ac.in" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ExternalLink size={12} /><span>NIT Hamirpur</span></a></li>
+                <li><a href="https://nith.ac.in/electrical-engineering" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ExternalLink size={12} /><span>EE Department</span></a></li>
               </ul>
             </div>
 
             {/* Services */}
             <div className="hidden md:block">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-4 sm:mb-5">Services</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/80 mb-4 sm:mb-5">Services</h4>
               <ul className="space-y-2.5 sm:space-y-3">
                 {services.map((service, index) => (
-                  <li key={index}><a href="#services" className="text-white/30 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>{service.title}</span></a></li>
+                  <li key={index}><a href="#services" className="text-white/50 hover:text-white transition-colors text-sm flex items-center space-x-2"><ChevronRight size={12} /><span>{service.title}</span></a></li>
                 ))}
               </ul>
             </div>
 
             {/* Contact */}
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white/60 mb-4 sm:mb-5">Contact Us</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white/80 mb-4 sm:mb-5">Contact Us</h4>
               <ul className="space-y-3 sm:space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin size={14} className="text-blue-400 mt-0.5 shrink-0" />
-                  <span className="text-white/30 text-xs sm:text-sm">TIFAC Core, EE Dept., NIT Hamirpur, H.P. 177005</span>
+                  <span className="text-white/50 text-xs sm:text-sm">TIFAC Core, EE Dept., NIT Hamirpur, H.P. 177005</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone size={13} className="text-blue-400 shrink-0" />
-                  <span className="text-white/30 text-xs sm:text-sm">+91-94188-47240</span>
+                  <span className="text-white/50 text-xs sm:text-sm">+91-94188-47240</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail size={13} className="text-blue-400 shrink-0" />
-                  <span className="text-white/30 text-xs sm:text-sm">tifac@nith.ac.in</span>
+                  <span className="text-white/50 text-xs sm:text-sm">tifac@nith.ac.in</span>
                 </li>
               </ul>
-              <button className="mt-5 sm:mt-6 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded transition-colors w-full">
-                Request audit
-              </button>
+              <a
+                href="/brochure.pdf"
+                download
+                className="mt-5 sm:mt-6 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded transition-colors w-full flex items-center justify-center space-x-2"
+              >
+                <Download size={14} />
+                <span>Download brochure</span>
+              </a>
             </div>
           </div>
         </div>
@@ -623,9 +646,9 @@ const EnergySteel = () => {
         {/* Bottom Bar */}
         <div className="border-t border-white/5">
           <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between">
-            <p className="text-white/20 text-[10px] sm:text-xs text-center sm:text-left">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
+            <p className="text-white/40 text-[10px] sm:text-xs text-center sm:text-left">&copy; 2025 National Institute of Technology Hamirpur. All rights reserved.</p>
             <div className="flex items-center space-x-4 sm:space-x-6 mt-2 sm:mt-0">
-              <a href="#" className="text-white/20 hover:text-white/50 transition-colors text-[10px] sm:text-xs">Sitemap</a>
+              <a href="#" className="text-white/40 hover:text-white/60 transition-colors text-[10px] sm:text-xs">Sitemap</a>
             </div>
           </div>
         </div>
