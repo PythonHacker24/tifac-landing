@@ -446,9 +446,9 @@ const EnergySteel = () => {
             </h2>
           </div>
 
-          {/* Director & Registrar */}
+          {/* Director NIT Hamirpur & Registrar NIT Hamirpur */}
           <div className="mb-12 sm:mb-16">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">Director &amp; Registrar</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">Director NIT Hamirpur &amp; Registrar NIT Hamirpur</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-x-6 sm:gap-y-10">
               {directorRegistrar.map((person, index) => (
                 <div key={index} className="group text-center">
